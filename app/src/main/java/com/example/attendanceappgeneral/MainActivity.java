@@ -56,14 +56,9 @@ public class MainActivity extends AppCompatActivity {
         getAndSetEmployeeNumToEditText();
         findCurrentWorkNum();
         currentWorkNumTextView.setText(getWorkNum());
-
     }
 
-    @Override
-    protected void onResume(){
-        super.onResume();
-    }
-
+    //Set up bottom two buttons
     private void setUpGoToWorkAndOffFromWorkButton(){
         Button goToWork = findViewById(R.id.goToWorkButton);
         goToWork.setOnClickListener(new View.OnClickListener() {
@@ -106,6 +101,7 @@ public class MainActivity extends AppCompatActivity {
         data.storeData("employeeNum", employeeNumEditText.getText().toString());
     }
 
+    //Update current work numbers
     private void findCurrentWorkNum() {
         for (int i=0; i<buttons.length; i++){
             if (data.getBooleanData(buttons[i].getText().toString())){
@@ -116,6 +112,8 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 
+    //Set up all the buttons
+    //Put them into array then make changes in the array
     private void setUpWorkNumButtons(){
         Button button101 = findViewById(R.id.button101);
         buttons[0] = button101;
@@ -171,11 +169,13 @@ public class MainActivity extends AppCompatActivity {
 
     private void checkButtonStatus(Button [] buttons) {
         for(Button button: buttons) {
+            //Button status are stored in preference with the button string name as the key
             service.changeButtonStatusAndColor(button, data.getBooleanData(button.getText().toString()));
             setUpOnclickForWorkNumButtons(button);
         }
     }
 
+    //Use function to set each button onClick
     private void setUpOnclickForWorkNumButtons(Button button){
         button.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -196,6 +196,7 @@ public class MainActivity extends AppCompatActivity {
         });
     }
 
+    //This function is to update TextView's text
     private String getWorkNum(){
         StringBuilder returnVal = new StringBuilder("");
         for(String workNum: currentWorkNumString) {
@@ -221,6 +222,7 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 
+    //Hide keyboard, also record the employeeNum in EditText to preference
     public void hideSoftKeyboard(View view){
         InputMethodManager imm =(InputMethodManager) getSystemService(Context.INPUT_METHOD_SERVICE);
         imm.hideSoftInputFromWindow(view.getWindowToken(), 0);

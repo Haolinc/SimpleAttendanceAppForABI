@@ -4,10 +4,10 @@ import android.content.Context;
 import android.content.Intent;
 import android.graphics.Color;
 import android.net.Uri;
-import android.util.Log;
 import android.widget.Button;
 
 public class Service {
+    //Change color of the button base on whether active or not
     public void changeButtonStatusAndColor(Button btn, boolean status){
         if (status)
             btn.setBackgroundColor(Color.rgb(222,184,135));
@@ -27,13 +27,11 @@ public class Service {
         Intent i = new Intent(Intent.ACTION_CALL);
         i.setData(Uri.parse("tel:7184807170" + pause(8) + "2" + pause(4) + employeeNum + pause(6) + "1"
                 + pause(4) + workNum));
-        Log.d(null, "tel:7184807170" + pause(8) + "2" + pause(4) + employeeNum + pause(6) + "1"
-                + pause(4) + workNum);
         context.startActivity(i);
     }
 
 
-
+    //Combine number with , and #
     public String workNumWithPoundAndPause(String [] arr){
         StringBuilder returnVal = new StringBuilder();
         for(String string: arr){
