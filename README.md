@@ -22,5 +22,5 @@ Download **ABI简易打钟app.apk** file in this page, and click install after.
 在此网页下载 **ABI简易打钟app.apk**文件， 然后进行安装。
 
 # Screenshot （截图）
-![alt text] (https://github.com/Haolinc/SimpleAttendanceAppForABI/blob/main/simple%20attentdance%20app%20screenshot.jpg)
+![alt text](https://github.com/Haolinc/SimpleAttendanceAppForABI/blob/main/simple%20attentdance%20app%20screenshot.jpg)
 
