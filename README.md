@@ -16,3 +16,6 @@ Then the user won't have to enter all the same information over and over again.
 2. 在 "请输入你的员工号码" 一栏输入你的员工号码。
 3. 选择任意你正在做的工作项目代号。（当你选择一个工作项目代号时，代号会变成金色）
 4. 按上班或者下班按钮来打钟。（**注意：在按下下班按钮时请不断的点击电话界面或者一直按住，不要让屏幕暗下去**）
+
+
+# ScreenShot （截图）
